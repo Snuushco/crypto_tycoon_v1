@@ -1,2 +1,5 @@
 __pycache__/
 *.py[cod]
+node_modules/
+frontend/dist/
+backend/node_modules/

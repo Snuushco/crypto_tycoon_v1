@@ -5,6 +5,7 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
 from crypto_tycoon.game import CryptoTycoonGame
+from crypto_tycoon.config_manager import ConfigManager
 
 
 class CryptoTycoonGameTest(unittest.TestCase):
@@ -31,6 +32,14 @@ class CryptoTycoonGameTest(unittest.TestCase):
         rig = self.game.buy_rig(0)
         self.assertIsNotNone(rig)
         self.assertEqual(len(self.game.state.rigs), 1)
+
+    def test_config_multiplier_affects_rig_price(self) -> None:
+        manager = ConfigManager(player_id="tester", backend_url=None)
+        manager.dynamic_overrides = {"pricing": {"rig_cost_multiplier": 0.5}}
+        game = CryptoTycoonGame(player_id="tester", config_manager=manager)
+        game.update_config(manager.resolve())
+        price = game.get_rig_price(0)
+        self.assertEqual(price, 250.0)
 
 
 if __name__ == "__main__":
