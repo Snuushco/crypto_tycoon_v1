@@ -1,0 +1,31 @@
+{
+  "name": "crypto-tycoon-backend",
+  "version": "1.0.0",
+  "description": "Analytics, experimentation, and live config services for Crypto Tycoon v1",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "analysis": "node scripts/analysisEngine.js",
+    "test": "node scripts/analysisEngine.js"
+  },
+  "keywords": [
+    "crypto",
+    "analytics",
+    "experimentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "express": "^5.1.0",
+    "lodash.merge": "^4.6.2",
+    "morgan": "^1.10.1",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

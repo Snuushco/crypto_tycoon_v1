@@ -1,0 +1,11 @@
+{
+  "pricing": {
+    "rig_cost_multiplier": 0.95
+  },
+  "dailyRewardScaling": {
+    "multiplier": 1.1
+  },
+  "boostValues": {
+    "defaultMultiplier": 1.2
+  }
+}
